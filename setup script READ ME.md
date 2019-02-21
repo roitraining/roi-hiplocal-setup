@@ -32,8 +32,11 @@ cd hip
 export MYDOMAIN=<hiplocal.yourdomain.ext>
 
 11. clone the frontend, backend and cloudfunction and setup repos from roi-hiplocal
-# INSERT COMMANDS HERE
 
+gcloud source repos clone backend --project=roi-hiplocal
+gcloud source repos clone frontend --project=roi-hiplocal
+gcloud source repos clone cloud-function --project=roi-hiplocal
+gcloud source repos clone setup --project=roi-hiplocal
 
 10. run the following commands to move into the setup directory and run the script
 
