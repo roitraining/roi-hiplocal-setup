@@ -34,10 +34,10 @@ gcloud compute addresses create hip-local --global
 # 7. replace all project names in source code with your project id
 # e.g for mac - may need adjustment elsewhere
 cd /path/to/frontend/folder
-sed -i '' 's/roi-hip-local/'"$GOOGLE_CLOUD_PROJECT"'/g' config.py
-sed -i '' 's/roi-hip-local/'"$GOOGLE_CLOUD_PROJECT"'/g' main.py
+sed -i '' 's/roi-hiplocal/'"$GOOGLE_CLOUD_PROJECT"'/g' config.py
+sed -i '' 's/roi-hiplocal/'"$GOOGLE_CLOUD_PROJECT"'/g' main.py
 cd /path/to/backend/folder
-sed -i '' 's/roi-hip-local/'"$GOOGLE_CLOUD_PROJECT"'/g' kubernetes-config.yaml
+sed -i '' 's/roi-hiplocal/'"$GOOGLE_CLOUD_PROJECT"'/g' kubernetes-config.yaml
 
 # 8. manual steps:
 1. Setup a DNS entry for hiplocal.yourdomain.whatever using your hip-local static ip

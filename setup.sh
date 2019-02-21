@@ -16,11 +16,11 @@ cd ../cloud-function
 gcloud functions deploy make_thumbnail --runtime python37 --trigger-resource $GOOGLE_CLOUD_PROJECT --trigger-event google.storage.object.finalize
 echo 'using sed to update kubernetes configuration for this project'
 cd ../backend
-sed -i 's/roi-hip-local/'"$GOOGLE_CLOUD_PROJECT"'/g' kubernetes-config.yaml
+sed -i 's/roi-hiplocal/'"$GOOGLE_CLOUD_PROJECT"'/g' kubernetes-config.yaml
 cd ../frontend
-sed -i 's/roi-hip-local/'"$GOOGLE_CLOUD_PROJECT"'/g' config.py
-sed -i 's/roi-hip-local/'"$GOOGLE_CLOUD_PROJECT"'/g' main.py
-sed -i 's/roi-hip-local/'"$GOOGLE_CLOUD_PROJECT"'/g' kubernetes-config.yaml
+sed -i 's/roi-hiplocal/'"$GOOGLE_CLOUD_PROJECT"'/g' config.py
+sed -i 's/roi-hiplocal/'"$GOOGLE_CLOUD_PROJECT"'/g' main.py
+sed -i 's/roi-hiplocal/'"$GOOGLE_CLOUD_PROJECT"'/g' kubernetes-config.yaml
 sed -i 's/hiplocal.kwikstart.net/'"$MYDOMAIN"'/g' kubernetes-config.yaml
 echo 'completed successfully'
 
