@@ -53,5 +53,7 @@ chmod +x setup.sh
 - optionally deploy to appengine as well
 # you probably want to demo all these steps, but if not, 
 # they are all done inside the optionalsetup.sh script
+# chmod +x optionalsetup.sh
+# ./optionalsetup.sh
 
 
