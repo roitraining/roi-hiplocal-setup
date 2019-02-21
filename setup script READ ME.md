@@ -16,34 +16,37 @@
 
     gcloud compute addresses create hip-local --global
     
-4. Setup a DNS entry for hiplocal.yourdomain.ext pointing at the hip-local static ip created by command
-5. Setup a firebase project for your new project
-6. Enable Google login in the authentication section
-7. Add your new domain and the appspot.com appengine domain from your new project to the list of authorized domains 
-8. Copy the web setup config from firebase and paste over the config in
-    frontend/templates/layout.  (It is at the end of the head section)
-9. Return to cloud shell window and run the following commands to create a hip directory and move into it
+4. Setup a DNS entry for hiplocal.yourdomain.ext pointing at the hip-local static ip 
+   created by the command
+5. Return to cloud shell window and run the following commands to create a hip directory and move into it
 
 mkdir hip
 cd hip
 
-10. export a variable to hold your new domain name created at step 4
-
-export MYDOMAIN=<hiplocal.yourdomain.ext>
-
-11. clone the frontend, backend and cloudfunction and setup repos from roi-hiplocal
+6. clone the frontend, backend and cloudfunction and setup repos from roi-hiplocal
 
 gcloud source repos clone backend --project=roi-hiplocal
 gcloud source repos clone frontend --project=roi-hiplocal
 gcloud source repos clone cloud-function --project=roi-hiplocal
 gcloud source repos clone setup --project=roi-hiplocal
 
-10. run the following commands to move into the setup directory and run the script
+7. Setup a firebase project for your new project
+8. Enable Google login in the authentication section
+9. Add your new domain and the appspot.com appengine domain from your new project to 
+   the list of authorized domains 
+10. Copy the web setup config from firebase 
+11. Paste the config over the matching section in: frontend/templates/layout.html
+    (It is at the end of the head section)
+12. export a variable to hold your new domain name created at step 4
 
-cd setup
+export MYDOMAIN=<hiplocal.yourdomain.ext>
+
+13. Move into the setup directory and run the following commands to run the setup script
+
+chmod +x setup.sh
 ./setup.sh
 
-11. FINALLY:
+14. FINALLY:
 - create the cluster
 - build your docker containers
 - deploy to cluster
