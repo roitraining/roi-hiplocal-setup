@@ -7,10 +7,10 @@ echo 'deploying appengine backend service'
 cd ../backend
 yes Y | gcloud app deploy
 echo 'building backend container'
-gcloud builds submit -t gcr.io/$GOOGLE_CLOUD_PROJECT/api:v0.1 .
+gcloud builds submit -t gcr.io/$GOOGLE_CLOUD_PROJECT/api:v0.2 .
 cd ../frontend
 echo 'building frontend container'
-gcloud builds submit -t gcr.io/$GOOGLE_CLOUD_PROJECT/ui:v0.1 .
+gcloud builds submit -t gcr.io/$GOOGLE_CLOUD_PROJECT/ui:v0.2 .
 echo 'deploying to k8s'
 gcloud container clusters get-credentials cluster-demo --zone us-central1-a --project $GOOGLE_CLOUD_PROJECT
 kubectl create -f kubernetes-config.yaml
